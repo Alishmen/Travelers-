@@ -1,0 +1,47 @@
+@keyframes fadeInScale {
+  0% { opacity:0; transform:scale(0.9); }
+  100% { opacity:1; transform:scale(1); }
+}
+@keyframes fadeOutScale {
+  0% { opacity:1; transform:scale(1); }
+  100% { opacity:0; transform:scale(0.95); }
+}
+@keyframes fadeInUp {
+  0% { opacity:0; transform:translateY(40px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+@keyframes logoPop {
+  0% { opacity:0; transform:scale(0.7) rotate(-10deg); }
+  80% { opacity:1; transform:scale(1.1) rotate(3deg); }
+  100% { opacity:1; transform:scale(1) rotate(0); }
+}
+@keyframes logoGlow {
+  0% { filter: drop-shadow(0 2px 8px #ef6c57) brightness(1.1); }
+  100% { filter: drop-shadow(0 0px 24px #fff) brightness(1.3); }
+}
+@keyframes textGlow {
+  0% { text-shadow: 0 2px 8px #ef6c57, 0 0 0 #fff; }
+  100% { text-shadow: 0 2px 16px #fff, 0 0 8px #ef6c57; }
+}
+.welcome-fadeout {
+  animation: fadeOutScale 1.2s cubic-bezier(.4,2,.6,1) forwards !important;
+}
+.welcome-logo-anim {
+  animation:logoPop 1.2s cubic-bezier(.4,2,.6,1), logoGlow 2.5s infinite alternate;
+  filter:drop-shadow(0 2px 8px #000);
+}
+.welcome-title-anim {
+  animation:fadeInUp 1.2s .3s both, textGlow 2.5s infinite alternate;
+  color:#fff;
+  text-shadow:0 2px 8px #000;
+}
+.welcome-text-anim {
+  animation:fadeInUp 1.2s .6s both, textGlow 2.5s 0.5s infinite alternate;
+  color:#fff;
+  text-shadow:0 1px 4px #000;
+}
+@media (max-width:600px) {
+  #welcome-modal div[style*='background:transparent'] { width:98vw; }
+  #welcome-modal h2 { font-size:1.3rem; }
+  #welcome-modal p { font-size:0.95rem; }
+} 
